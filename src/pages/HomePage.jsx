@@ -51,38 +51,40 @@ export default function HomePage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-[#D4AF37] mb-8 text-center font-[Tajawal]">مرحباً بكم في سوقنا</h1>
+    <div className="container mx-auto px-4 py-8 font-[Tajawal]">
+      <h1 className="text-3xl font-bold text-[#D4AF37] mb-8 text-center">مرحباً بكم في سوقنا</h1>
 
-      <div className="flex flex-col lg:flex-row gap-8">
+      <div className="flex flex-col lg:flex-row gap-6 items-start">
 
         {/* القائمة الجانبية اليمنى - الأقسام */}
-        <aside className="lg:w-1/4 h-fit">
-          <h2 className="text-xl font-bold text-[#D4AF37] mb-4 text-center font-[Tajawal]">الأقسام</h2>
-          <div className="flex flex-col gap-3">
+        <aside className="lg:w-1/4">
+          <div className="bg-[#06264D] rounded-2xl p-4 border-[#D4AF37]/20 sticky top-20 h-fit">
+            <h2 className="text-xl font-bold text-[#D4AF37] mb-4 text-center">الأقسام</h2>
 
-            <button
-              onClick={() => setSelectedCategory('')}
-              className={`w-full text-center px-4 py-3 rounded-2xl font-bold transition-all duration-200 border-[#D4AF37]/20 font-[Tajawal]
-                ${!selectedCategory
-                 ? 'bg-[#D4AF37] text-[#041C3A]'
-                  : 'bg-[#0b2f5c] text-white hover:bg-[#D4AF37] hover:text-[#041C3A]'}`}
-            >
-              الكل
-            </button>
-
-            {categories.map(cat => (
+            <div className="flex flex-col gap-2">
               <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`w-full text-center px-4 py-3 rounded-2xl font-bold transition-all duration-200 border-[#D4AF37]/20 flex items-center justify-center gap-2 font-[Tajawal]
-                  ${selectedCategory === cat.id
-                   ? 'bg-[#D4AF37] text-[#041C3A]'
+                onClick={() => setSelectedCategory('')}
+                className={`w-full text-center px-3 py-2 rounded-xl font-bold transition-all duration-200
+                  ${!selectedCategory
+                  ? 'bg-[#D4AF37] text-[#041C3A]'
                     : 'bg-[#0b2f5c] text-white hover:bg-[#D4AF37] hover:text-[#041C3A]'}`}
               >
-                {cat.name} <span>{cat.icon}</span>
+                الكل
               </button>
-            ))}
+
+              {categories.map(cat => (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id)}
+                  className={`w-full text-center px-3 py-2 rounded-xl font-bold transition-all duration-200 flex items-center justify-center gap-2
+                    ${selectedCategory === cat.id
+                    ? 'bg-[#D4AF37] text-[#041C3A]'
+                      : 'bg-[#0b2f5c] text-white hover:bg-[#D4AF37] hover:text-[#041C3A]'}`}
+                >
+                  {cat.name} <span>{cat.icon}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </aside>
 
@@ -95,7 +97,7 @@ export default function HomePage() {
               ))}
             </div>
           ) : products.length === 0? (
-            <div className="text-center py-20 text-gray-400 font-[Tajawal]">
+            <div className="text-center py-20 text-gray-400">
               لا توجد منتجات في هذا القسم حالياً
             </div>
           ) : (
@@ -107,22 +109,25 @@ export default function HomePage() {
           )}
         </main>
 
-        {/* القائمة الجانبية اليسرى - تسويقية */}
-        <aside className="lg:w-1/4 h-fit">
-          <h2 className="text-xl font-bold text-[#D4AF37] mb-4 text-center font-[Tajawal]">اكتشف</h2>
-          <div className="flex flex-col gap-3">
-            {sideLinks.map(link => (
-              <Link
-                key={link.slug}
-                to={`/${link.slug}`}
-                className="flex items-center justify-center gap-2 px-4 py-3 rounded-2xl font-bold transition-all duration-200 border-[#D4AF37]/20 bg-[#0b2f5c] text-white hover:bg-[#D4AF37] hover:text-[#041C3A] font-[Tajawal]"
-              >
-                {link.name} <span>{link.icon}</span>
-                <ChevronLeft size={16} className="mr-auto" />
-              </Link>
-            ))}
+        {/* القائمة الجانبية اليسرى - التسويقية */}
+        <aside className="lg:w-1/4">
+          <div className="bg-[#06264D] rounded-2xl p-4 border-[#D4AF37]/20 sticky top-20 h-fit">
+            <h2 className="text-xl font-bold text-[#D4AF37] mb-4 text-center">الأقسام التسويقية</h2>
+
+            <div className="flex flex-col gap-2">
+              {sideLinks.map(link => (
+                <Link
+                  key={link.slug}
+                  to={`/${link.slug}`}
+                  className="w-full text-center px-3 py-2 rounded-xl font-bold transition-all duration-200 flex items-center justify-center gap-2 bg-[#0b2f5c] text-white hover:bg-[#D4AF37] hover:text-[#041C3A]"
+                >
+                  {link.name} <span>{link.icon}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </aside>
+
       </div>
     </div>
   )
