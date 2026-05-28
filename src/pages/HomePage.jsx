@@ -53,9 +53,12 @@ export default function HomePage() {
   return (
     <div className="container mx-auto px-4 py-4 font-[Tajawal]">
 
-      {/* الهيدر - مكان اللوجو فوق على اليمين */}
+      {/* الهيدر - اللوجو قبل كلمة سوقنا */}
       <div className="flex justify-end mb-6">
-        <img src="/logo.png" alt="سوقنا" className="h-12" />
+        <div className="flex items-center gap-3 flex-row-reverse">
+          <img src="/logo.png" alt="سوقنا" className="h-12" />
+          <span className="text-2xl font-bold text-[#D4AF37]">سوقنا</span>
+        </div>
       </div>
 
       {/* العنوان الأوسط */}
@@ -73,7 +76,7 @@ export default function HomePage() {
                 onClick={() => setSelectedCategory('')}
                 className={`w-full text-center px-3 py-2 rounded-xl font-bold transition-all duration-200
                   ${!selectedCategory
-                ? 'bg-[#D4AF37] text-[#041C3A]'
+               ? 'bg-[#D4AF37] text-[#041C3A]'
                     : 'bg-[#0b2f5c] text-white hover:bg-[#D4AF37] hover:text-[#041C3A]'}`}
               >
                 الكل
@@ -85,7 +88,7 @@ export default function HomePage() {
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`w-full text-center px-3 py-2 rounded-xl font-bold transition-all duration-200 flex items-center justify-center gap-2
                     ${selectedCategory === cat.id
-                  ? 'bg-[#D4AF37] text-[#041C3A]'
+                 ? 'bg-[#D4AF37] text-[#041C3A]'
                       : 'bg-[#0b2f5c] text-white hover:bg-[#D4AF37] hover:text-[#041C3A]'}`}
                 >
                   {cat.name} <span>{cat.icon}</span>
