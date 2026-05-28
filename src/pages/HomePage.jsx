@@ -110,7 +110,7 @@ export default function HomePage() {
         </main>
 
         {/* القائمة الجانبية اليسرى - التسويقية */}
-        <aside className="lg:w-1/4">
+        <aside className="lg:w-1/6">
           <div className="bg-[#06264D] rounded-2xl p-4 border-[#D4AF37]/20 sticky top-20 h-fit">
             <h2 className="text-xl font-bold text-[#D4AF37] mb-4 text-center">الأقسام التسويقية</h2>
 
