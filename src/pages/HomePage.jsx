@@ -52,7 +52,11 @@ export default function HomePage() {
 
   return (
     <div className="container mx-auto px-4 py-8 font-[Tajawal]">
-      <h1 className="text-3xl font-bold text-[#D4AF37] mb-8 text-center">مرحباً بكم في سوقنا</h1>
+
+      {/* اللوجو هنا */}
+      <div className="flex justify-center mb-8">
+        <img src="/logo.png" alt="سوقنا" className="h-12" />
+      </div>
 
       <div className="flex flex-col lg:flex-row gap-6 items-start">
 
@@ -66,7 +70,7 @@ export default function HomePage() {
                 onClick={() => setSelectedCategory('')}
                 className={`w-full text-center px-3 py-2 rounded-xl font-bold transition-all duration-200
                   ${!selectedCategory
-                 ? 'bg-[#D4AF37] text-[#041C3A]'
+                ? 'bg-[#D4AF37] text-[#041C3A]'
                     : 'bg-[#0b2f5c] text-white hover:bg-[#D4AF37] hover:text-[#041C3A]'}`}
               >
                 الكل
@@ -78,7 +82,7 @@ export default function HomePage() {
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`w-full text-center px-3 py-2 rounded-xl font-bold transition-all duration-200 flex items-center justify-center gap-2
                     ${selectedCategory === cat.id
-                   ? 'bg-[#D4AF37] text-[#041C3A]'
+                  ? 'bg-[#D4AF37] text-[#041C3A]'
                       : 'bg-[#0b2f5c] text-white hover:bg-[#D4AF37] hover:text-[#041C3A]'}`}
                 >
                   {cat.name} <span>{cat.icon}</span>
