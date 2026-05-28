@@ -53,16 +53,9 @@ export default function HomePage() {
   return (
     <div className="container mx-auto px-4 py-8 font-[Tajawal]">
 
-      {/* اللوجو بنفس نمط الهيدر */}
+      {/* اللوجو مكان النص */}
       <div className="flex justify-center mb-8">
-        <div className="flex items-center gap-4">
-          <div className="w-15 h-15 bg-[#D4AF37] rounded-[15px] flex items-center justify-center text-2xl font-bold text-[#041C3A]">
-            س
-          </div>
-          <div className="text-4xl font-black text-[#D4AF37]">
-            Souqna
-          </div>
-        </div>
+        <img src="/logo.png" alt="سوقنا" className="h-14" />
       </div>
 
       <div className="flex flex-col lg:flex-row gap-6 items-start">
