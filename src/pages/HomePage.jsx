@@ -51,12 +51,15 @@ export default function HomePage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 font-[Tajawal]">
+    <div className="container mx-auto px-4 py-4 font-[Tajawal]">
 
-      {/* اللوجو مكان النص */}
-      <div className="flex justify-center mb-8">
-        <img src="/logo.png" alt="سوقنا" className="h-14" />
+      {/* الهيدر - مكان اللوجو فوق على اليمين */}
+      <div className="flex justify-end mb-6">
+        <img src="/logo.png" alt="سوقنا" className="h-12" />
       </div>
+
+      {/* العنوان الأوسط */}
+      <h1 className="text-3xl font-bold text-[#D4AF37] mb-8 text-center">مرحباً بكم في سوقنا</h1>
 
       <div className="flex flex-col lg:flex-row gap-6 items-start">
 
